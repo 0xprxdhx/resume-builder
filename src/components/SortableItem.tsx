@@ -130,10 +130,10 @@ export default function SortableItem({ id, children, disabled = false }: Sortabl
           style={handleStyle}
           aria-label="Drag to reorder"
           title="Drag to reorder"
-          tabIndex={0}
           // Spread dnd-kit's keyboard + pointer listeners onto the handle only.
           // This means clicks/typing inside the card's inputs don't accidentally
           // start a drag.
+          // Note: tabIndex is provided by {...attributes} from dnd-kit — don't set it twice.
           {...attributes}
           {...listeners}
 
